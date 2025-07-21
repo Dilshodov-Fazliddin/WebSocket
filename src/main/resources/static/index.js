@@ -8,7 +8,6 @@ var messageForm = document.querySelector('#messageForm');
 var messageInput = document.querySelector('#message');
 var messageArea = document.querySelector('#messageArea');
 
-// Optional: this element was referenced but not in your HTML; add it if needed
 var connectingElement = document.querySelector('.connecting');
 var colors = [
     '#2196F3', '#32c787', '#00BCD4', '#ff5652',
@@ -68,42 +67,6 @@ function sendMessage(event) {
     event.preventDefault();
 }
 
-// function onMessageReceived(payload) {
-//     var message = JSON.parse(payload.body);
-//
-//     var messageElement = document.createElement('li');
-//
-//     if (message.type === 'JOIN') {
-//         messageElement.classList.add('event-message');
-//         message.content = message.sender + ' joined!';
-//     } else if (message.type === 'LEAVE') {
-//         messageElement.classList.add('event-message');
-//         message.content = message.sender + ' left!';
-//     } else {
-//         messageElement.classList.add('chat-message');
-//
-//         var avatarElement = document.createElement('i');
-//         var avatarText = document.createTextNode(message.sender[0]);
-//         avatarElement.appendChild(avatarText);
-//         avatarElement.style['background-color'] = getAvatarColor(message.sender);
-//
-//         messageElement.appendChild(avatarElement);
-//
-//         var usernameElement = document.createElement('span');
-//         var usernameText = document.createTextNode(message.sender);
-//         usernameElement.appendChild(usernameText);
-//         messageElement.appendChild(usernameElement);
-//     }
-//
-//     var textElement = document.createElement('p');
-//     var messageText = document.createTextNode(message.content);
-//     textElement.appendChild(messageText);
-//
-//     messageElement.appendChild(textElement);
-//
-//     messageArea.appendChild(messageElement);
-//     messageArea.scrollTop = messageArea.scrollHeight;
-// }
 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
